@@ -1862,6 +1862,122 @@
 			padding: 0;
 		}
 
+		.box .boxA{
+			position: relative;
+			height: 200px;
+			max-height: 200px;
+			overflow: hidden;
+
+		}
+		
+		.box .boxA .link{
+			position:absolute;
+			z-index: 20;
+			height: 100%;
+			width: 100%;
+			left:0px; 
+			top:0px;
+		}
+
+		.box .boxA .link a{
+			position:absolute;
+			z-index: 20;
+			height: 100%;
+			width: 100%;
+			left:0px; 
+			top:0px;
+		}
+
+		.box .boxA .p{
+			text-transform: uppercase;
+			font-size: .75rem;
+			font-weight: 300;
+			margin: 0 0 .25rem 0;
+			padding: 0 0 .75rem 0;
+			letter-spacing: .25rem;	
+			position: absolute;
+            top: 100%;
+            left: 33%;
+		}
+
+		.box .boxA:hover .image::after{
+			opacity: 1;
+			visibility: visible;
+
+		}
+
+		.box .boxA .image::after{
+			content: '';
+			width: 433.4%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba(0, 0, 0, 0.8);
+			background: linear-gradient(to left, rgb(112, 112, 112), rgba(90, 90, 90, 0.4));
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.4s;
+		}
+
+		.box .boxA:hover .info{
+			left: 350px;
+		}
+
+		.box .boxA .info{
+			position: absolute;
+			left: 2000px;
+			bottom: 50%;
+			padding: 0 15px;
+			width: 100%;
+			z-index: 4;
+			transition: all 0.4s;
+		}
+		.box .boxA .info h5{
+			font-size: 15px;
+			color: white;
+			letter-spacing: 1px;
+			margin-bottom: 5px;
+		}
+		.box .boxA .info span{
+			font-size: 13px;
+			font-family: italic;
+			margin-bottom: 10px;
+			color: #ee3158;
+		}
+		.box .boxA .info p{
+			margin-bottom: 10px;
+			color: #ffffff;
+		}
+		.box .boxA .info .icon{
+			margin: 0 10px;
+			font-size: 12px;
+			color: #eee;
+			cursor: pointer;
+		}
+
+		.box .boxA .image p{
+			position: absolute;
+			left: 400px;
+			bottom: 20%;
+			padding: 0 15px;
+			width: 200%;
+			z-index: 4;
+			transition: all 0.4s;
+			font-size: 40px;
+			color: rgb(0, 0, 0);
+			letter-spacing: 2px;
+		}
+		.box .boxA:hover .image p{
+			position: absolute;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.box p{
+			font-size: 1.15rem;
+		}
+
 		@media screen and (max-width: 736px) {
 
 			.box .content {
@@ -2891,6 +3007,7 @@
 		.wrapper.style2 {
 			background-color: #f2f2f2;
 			color: #a6a6a6;
+			padding: 2%;
 		}
 
 			.wrapper.style2 input, .wrapper.style2 select, .wrapper.style2 textarea {
@@ -3332,7 +3449,7 @@
 
 			.wrapper.style3 p {
 				text-transform: uppercase;
-				font-size: .75rem;
+				font-size: .85rem;
 				font-weight: 300;
 				margin: 0 0 .5rem 0;
 				padding: 0 0 1rem 0;
@@ -4310,3 +4427,98 @@
 			}
 
 		}
+
+/* Timeline */	
+
+.boody {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	width: 80rem;
+	margin: 0 auto;
+	font-family: 'Source Sans Pro', arial, sans-serif;
+	font-weight: 300;
+	box-sizing: border-box;
+  }
+  .boody * {
+	box-sizing: border-box;
+  }
+
+.timeline {
+	width: 100%;
+	background: #fff;
+	padding: 100px 50px;
+	position: relative;
+	box-shadow: 0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2);
+  }
+  .timeline:before {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: calc(33% + 15px);
+	bottom: 0px;
+	width: 4px;
+	background: #ddd;
+  }
+  .timeline:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
+  .entry {
+	clear: both;
+	text-align: left;
+	position: relative;
+  }
+  .entry .title {
+	margin-bottom: .5em;
+	float: left;
+	width: 33%;
+	padding-right: 30px;
+	text-align: right;
+	position: relative;
+  }
+  .entry .title:before {
+	content: '';
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	border: 4px solid salmon;
+	background-color: #fff;
+	border-radius: 100%;
+	top: 15%;
+	right: -4px;
+	z-index: 99;
+  }
+  .entry .title h3 {
+	margin: 0;
+	font-size: 120%;
+  }
+  .entry .title p {
+	margin: 0;
+	font-size: 100%;
+  }
+  .entry .body {
+	margin: 0 0 3em;
+	float: right;
+	width: 66%;
+	padding-left: 30px;
+  }
+  .entry .body p {
+	line-height: 1.4em;
+  }
+  .entry .body p:first-child {
+	margin-top: 0;
+	font-weight: 400;
+  }
+  .entry .body ul {
+	color: #aaa;
+	padding-left: 0;
+	list-style-type: none;
+  }
+  .entry .body ul li:before {
+	content: "–";
+	margin-right: .5em;
+  }

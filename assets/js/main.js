@@ -9,7 +9,7 @@ var settings = {
 	banner: {
 
 		// Indicators (= the clickable dots at the bottom).
-			indicators: true,
+			indicators: false,
 
 		// Transition speed (in ms)
 		// For timing purposes only. It *must* match the transition speed of "#banner > article".
